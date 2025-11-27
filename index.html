@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Creative Portfolio — Demo</title>
+  <meta name="description" content="A small responsive HTML5/CSS3/JS portfolio demo with theme toggle and project modal.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-grid">
+      <h1 class="logo">Harish<span class="accent">.</span></h1>
+      <nav class="nav">
+        <button id="themeToggle" class="btn icon" aria-label="Toggle theme">🌓</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div>
+        <h2>Hi — I'm Harish</h2>
+        <p class="lead">A frontend-focused developer building beautiful, accessible interfaces with a lean JavaScript layer.</p>
+        <div class="hero-actions">
+          <a class="btn primary" id="viewProjectsBtn">View projects</a>
+          <a class="btn ghost" href="#contact">Contact me</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="assets/illustration.svg" alt="abstract illustration" />
+      </div>
+    </section>
+
+    <section id="projects" class="container projects-section">
+      <h3>Selected projects</h3>
+      <div class="projects-grid" id="projectsGrid">
+        <!-- Project cards are injected by JavaScript -->
+      </div>
+    </section>
+
+    <section id="contact" class="container contact-section">
+      <h3>Contact</h3>
+      <form id="contactForm" class="contact-form" novalidate>
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" required minlength="2" />
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" required />
+        </label>
+        <label>
+          <span>Message</span>
+          <textarea name="message" rows="5" required></textarea>
+        </label>
+        <div class="form-row">
+          <button class="btn primary" type="submit">Send message</button>
+          <button class="btn ghost" type="reset">Reset</button>
+        </div>
+        <p id="formStatus" aria-live="polite" class="form-status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Built with ❤️ • HTML5 • CSS3 • Vanilla JS</p>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-panel" role="document">
+      <button id="modalClose" class="modal-close" aria-label="Close">✕</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
